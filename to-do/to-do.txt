@@ -1,0 +1,46 @@
+Step 1: Set up your Development Environment
+
+Step 2: Create the Project Structure
+    *Create a directory for your project and organize it with relevant subdirectories :
+
+	SortSearchVisualizer/
+	|-- main.py
+	|-- algorithms/
+	|   |-- sorting.py
+	|   |-- searching.py
+	|-- visualization/
+	|   |-- draw.py
+	|-- assets/
+	|   |-- (put your images or other assets here)
+
+Step 3: Set Up Pygame Window
+In your main.py file, initialize Pygame and create a window. You'll need an event loop to handle user input and update the display.
+
+Step 4: Implement Sorting Algorithms
+In the algorithms/sorting.py file, implement sorting algorithms such as Bubble Sort, Merge Sort, Quick Sort, etc. Ensure that the algorithms work correctly on the array you'll be visualizing.
+
+Step 5: Implement Searching Algorithms
+In the algorithms/searching.py file, implement searching algorithms such as Linear Search, Binary Search, etc.
+
+Step 6: Create Visualization Functions
+In the visualization/draw.py file, implement functions to visualize the array, swap elements during sorting, and highlight elements during searching.
+
+Step 7: Integrate Numpy
+Use Numpy to efficiently manipulate arrays in your algorithms. This will make it easier to work with arrays and visualize them.
+
+Step 8: User Interface
+Design a simple user interface for users to choose algorithms, set array size, and start/stop visualizations.
+
+Step 9: User Input Handling
+Implement user input handling in your event loop to respond to user actions, such as starting/stopping the visualization or changing algorithm options.
+
+Step 10: Run the Application
+Run your main.py file to launch the visualizer. Test different algorithms and make sure the visualization accurately represents the algorithm steps.
+
+Step 11: Documentation and Testing
+Document your code, especially the algorithms, and conduct thorough testing to ensure the visualizations are correct and the application is user-friendly.
+
+Step 12:  Enhancements
+Adding additional features such as speed control for visualizations, different color schemes, or more algorithms.
+
+Step 13: Convert it into an app
