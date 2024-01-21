@@ -156,7 +156,9 @@ def HeapSort(arr):
 #QUICK SORT
 def QuickSort(l, h, arr):
     """Quick sort uses divide and conquer method to solve. It works by comparing an element with other elements and swap with itself
-        if the new element is found to be smaller."""
+        if the new element is found to be smaller.
+        
+        Time complexity is O(n^2) or O(n(log(n)))"""
     if l < h:
         pivot_index = partition(l, h, arr)
         QuickSort(l, pivot_index, arr)
@@ -183,7 +185,9 @@ def partition(l, h, arr):
 #RADIX SORT(LSD)
 def RadixSort(arr):
     """Radix sort is a non-comparison based algorithm, it uses stable sorting technique to arrange the numbers
-    By taking each unit digit the sorting is done first. Then 10's digit is taken and sorted and at last the hundreds digit is used to sort"""
+    By taking each unit digit the sorting is done first. Then 10's digit is taken and sorted and at last the hundreds digit is used to sort
+    
+    Time Complexity is O(d*(n+k))"""
     # Find the maximum number to know the number of digits
     max_num = max(arr)
     
