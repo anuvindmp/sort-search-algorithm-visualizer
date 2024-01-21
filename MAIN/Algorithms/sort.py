@@ -96,6 +96,63 @@ def MergeSort(arr):
             k += 1
 
 
+
+#HEAP SORT
+def Swap(arr,i,j):
+    arr[i], arr[j] = arr[j], arr[i]
+
+def SiftDown(arr, i, upper):
+    while True:
+        l, r = i*2+1, i*2+2
+        if max(l,r) < upper:
+            if arr[i] >= max(arr[l], arr[r]): break
+            elif arr[l] > arr[r]:
+                Swap(arr, i, l)
+                i = l
+            else:
+                Swap(arr, i, r)
+                i = r
+        
+        elif l < upper:
+            if arr[l] > arr[i]:
+                Swap(arr, i, l)
+                i = l
+            else: break
+        
+        elif r < upper:
+            if arr[l] > arr[i]:
+                Swap(arr, i, r)
+                i = r
+            else: break
+        else: break
+            
+def HeapSort(arr):
+    '''
+    Heapsort is a comparison-based sorting algorithm that uses a binary heap data structure to build a max-heap or min-heap. Here's a basic overview of how heapsort works, along with a simple implementation in Python:
+
+    Heapsort Overview:
+    Build Heap:
+
+    The first step of heapsort involves building a binary heap from the input array. This can be done in linear time.
+    For a max-heap, the heap property is that the value of each node is greater than or equal to the values of its children.
+    For a min-heap, the heap property is that the value of each node is less than or equal to the values of its children.
+    Heapify:
+
+    After building the heap, the largest (for max-heap) or smallest (for min-heap) element is at the root.
+    Swap the root with the last element of the array, decrease the size of the heap, and heapify the root.
+    Repeat this process until the heap is empty.
+
+    Time complexity : O(nlogn)
+    '''
+    for i in range((len(arr)-2//2), -1, -1):
+        SiftDown(arr, i, len(arr))
+    
+    for end in range(len(arr)-1, 0, -1):
+        Swap(arr, 0, end)
+        SiftDown(arr, 0, end)
+    
+    return arr
+
 #QUICK SORT
 
        #HARI DO YOUR THING
