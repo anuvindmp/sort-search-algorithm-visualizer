@@ -154,8 +154,31 @@ def HeapSort(arr):
     return arr
 
 #QUICK SORT
+def QuickSort(l, h, arr):
+    """Quick sort uses divide and conquer method to solve. It works by comparing an element with other elements and swap with itself
+        if the new element is found to be smaller."""
+    if l < h:
+        pivot_index = partition(l, h, arr)
+        QuickSort(l, pivot_index, arr)
+        QuickSort(pivot_index + 1, h, arr)
 
-       #HARI DO YOUR THING
+def partition(l, h, arr):
+    pivot = arr[l]
+    i, j = l, h
+
+    while True:
+        while arr[i] < pivot:
+            i += 1
+
+        while arr[j] > pivot:
+            j -= 1
+
+        if i >= j:
+            return j
+
+        # Swap arr[i] and arr[j]
+        arr[i], arr[j] = arr[j], arr[i]
+
 
 #RADIX SORT(LSD)
             
