@@ -94,3 +94,6 @@ def MergeSort(arr):
             arr[k] = rightArray[j]
             j += 1
             k += 1
+
+
+#QUICK SORT
