@@ -48,8 +48,6 @@ def BinarySearch(arr, num):
                 u = mid - 1
     return f"{num} not found"
 
-n = [5, 7, 9, 4, 1, 3, 9, 6, 4, 78]
-print(BinarySearch(n, 8))
 
 
 
