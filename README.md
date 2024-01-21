@@ -3,20 +3,20 @@ Python-based application that helps users visualize various data structures and 
 
 **The Algorithms we are planning to visualize**
 
-_Sorting algorithms :_
-●	BubbleSort
-●	InsertionSort
-●	SelectionSort
-●	HeapSort
-●	MergeSort
-●	QuickSort
-●	RadixSort(LSD)
+_Sorting algorithms :_<br>
+●	BubbleSort<br>
+●	InsertionSort<br>
+●	SelectionSort<br>
+●	HeapSort<br>
+●	MergeSort<br>
+●	QuickSort<br>
+●	RadixSort(LSD)<br>
 
-_Searching algorithms(Array) :_
-●	Linear Search
-●	Binary Search
+_Searching algorithms(Array) :_<br>
+●	Linear Search<br>
+●	Binary Search<br>
 
-_Searching algorithms(Graph) :_
-●	Breadth first search (BFS)
-●	Depth first search (DFS)
+_Searching algorithms(Graph) :_<br>
+●	Breadth first search (BFS)<br>
+●	Depth first search (DFS)<br>
 
