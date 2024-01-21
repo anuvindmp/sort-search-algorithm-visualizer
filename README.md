@@ -12,9 +12,11 @@ _Sorting algorithms :_
 ●	QuickSort
 ●	RadixSort(LSD)
 
-_Searching algorithms :_
+_Searching algorithms(Array) :_
 ●	Linear Search
 ●	Binary Search
+
+_Searching algorithms(Graph) :_
 ●	Breadth first search (BFS)
 ●	Depth first search (DFS)
 
