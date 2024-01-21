@@ -43,4 +43,7 @@ Document your code, especially the algorithms, and conduct thorough testing to e
 Step 12:  Enhancements
 Adding additional features such as speed control for visualizations, different color schemes, or more algorithms.
 
+
+===> Implement mySQL to store user data 
+
 Step 13: Convert it into an app

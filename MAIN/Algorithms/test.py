@@ -1,24 +1,45 @@
-def SelectionSort(nums):
-    """
-    The algorithm repeatedly selects the smallest (or largest, depending on the order desired) element from the 
-    unsorted sub-list and swaps it with the first element of the unsorted sub-list. This process is repeated until 
-    the entire list is sorted.
-    1.Start with the entire list considered as an unsorted sub-list.
-    2.Find the smallest (or largest) element in the unsorted sub-list.
-    3.Swap the found element with the first element of the unsorted sub-list.
-    4.Move the boundary between the sorted and unsorted sub-lists one element to the right.
-    5.Repeat steps 2-4 until the entire list is sorted
+def MergeSort(arr):
+    """Merge Sort is a divide-and-conquer sorting algorithm. It works by dividing the input array into two halves,
+      recursively sorting each half, and then merging the sorted halves to produce a single sorted array. This 
+      process continues until the entire array is sorted.
+      1.Divide: Divide the unsorted list into two halves.
+      2.Conquer: Recursively sort each half.
+      3.Merge: Merge the sorted halves to produce a single sorted array.
 
-    Time Complexity : O(n^2)
-    """
-    for i in range(len(nums)-1):
-        minPos = i  
-        for j in range (i, len(nums)):
-            if nums[j] < nums[minPos]:
-                nums[j],nums[minPos] = nums[minPos], nums[j]
-    return nums
+      Time Complexity : O(nlogn)
+      """
 
 
+    if len(arr) > 1:
+        leftArray = arr[:len(arr) // 2]
+        rightArray = arr[len(arr) // 2:]
 
-n = [5,3,8,6,7,2]
-print(SelectionSort(n))
+        # recursion:
+        MergeSort(leftArray)
+        MergeSort(rightArray)
+
+        # merge step:
+        i = j = k = 0  # indices for leftArray, rightArray, and merged array
+
+        while i < len(leftArray) and j < len(rightArray):
+            if leftArray[i] < rightArray[j]:
+                arr[k] = leftArray[i]
+                i += 1
+            else:
+                arr[k] = rightArray[j]
+                j += 1
+            k += 1
+
+        while i < len(leftArray):
+            arr[k] = leftArray[i]
+            i += 1
+            k += 1
+
+        while j < len(rightArray):
+            arr[k] = rightArray[j]
+            j += 1
+            k += 1
+
+n = [5, 3, 8, 6, 7, 2]
+MergeSort(n)
+print(n)
