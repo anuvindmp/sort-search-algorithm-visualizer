@@ -5,7 +5,7 @@ import sys
 pygame.init()
 
 # Set up display
-width, height = 800, 600
+width, height = 1500, 750  # Updated dimensions
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Animated Text Display")
 
@@ -18,12 +18,12 @@ def animated_text_display(word):
         partial_word = word[:i]
         text_surface = font.render(partial_word, True, text_color)
 
-        # Clear the screen with the background color
-        screen.fill(background_color)
+        # Clear the screen with the background image
+        screen.blit(background_image, (0, 0))
 
         # Calculate the position to center the text on the screen
         x = (width - text_surface.get_width()) // 2
-        y = (height - text_surface.get_height()) // 6  # Adjusted to place it a bit above the top
+        y = (height - text_surface.get_height()) // 8  # Adjusted to place it a bit more above
 
         # Draw the text on the screen
         screen.blit(text_surface, (x, y))
@@ -34,24 +34,24 @@ def animated_text_display(word):
         # Pause for a short duration
         pygame.time.delay(100)  # You can adjust the delay to control the speed
 
+# Set up font
+font = pygame.font.Font(None, 83)  # Adjusted font size
+text_color = (255, 255, 255)  # Set font color to black
+
+# Load the background image
+image_path = "C:\\Users\\Hari\\Documents\\sort-search-algorithm-visualizer\\MAIN\\Visualization\\fallascii.jpg"
+background_image = pygame.image.load(image_path)  # Replace with the actual image file path
+background_image = pygame.transform.scale(background_image, (width, height))
+
+# Display the background image
+screen.blit(background_image, (0, 0))
+pygame.display.flip()
+
 # Your word to display
 word_to_display = "Welcome"
 
-# Set up font
-font = pygame.font.Font(None, 83)  # Adjusted font size
-text_color = (255, 255, 255)
-
 # Call the animated_text_display function with the word
 animated_text_display(word_to_display)
-
-# Load the image
-image = pygame.image.load("C:\\Users\\Hari\\Documents\\sort-search-algorithm-visualizer\\MAIN\\Visualization\\4lr0bzo89ti51.jpg")  # Replace with the actual image file path
-image_rect = image.get_rect()
-image_rect.center = (width // 2, height // 2)  # Center the image on the screen
-
-# Display the image
-screen.blit(image, image_rect)
-pygame.display.flip()
 
 # Show the message below the image
 message_font = pygame.font.Font(None, 36)
@@ -74,7 +74,7 @@ while waiting_for_click:
             waiting_for_click = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             # Check if the click is on the image
-            if image_rect.collidepoint(event.pos):
+            if pygame.Rect(0, 0, width, height).collidepoint(event.pos):
                 waiting_for_click = False
 
 # Quit Pygame
