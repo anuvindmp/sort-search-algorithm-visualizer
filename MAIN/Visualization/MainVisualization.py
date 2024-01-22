@@ -5,7 +5,13 @@ pygame.init()
 screen = pygame.display.set_mode((1200,750))
 clock = pygame.time.Clock()
 pygame.display.set_caption("Sort-Search-Algorithm-Visualizer")
-# icon = pygame.image.load("")
+gif_path = 'giphy.gif'
+gif_image = pygame.image.load(gif_path)
+gif_rect = gif_image.get_rect()
+
+# Set the initial position for the image
+x, y = 100, 100
+gif_rect.topleft = (x, y)
 # pygame.display.set_icon(icon)
 
 while True:
