@@ -1,4 +1,5 @@
 import pygame
+import pyfiglet
 from sys import exit
 
 pygame.init()
@@ -6,6 +7,7 @@ screen = pygame.display.set_mode((1200, 750))
 
 pygame.display.set_caption("Sort-Search-Algorithm-Visualizer")
 gif_path = 'C:\\Users\\Hari\\Documents\\sort-search-algorithm-visualizer\\MAIN\\Visualization\\d9egxsf-87b043c7-f5a9-49b9-8a50-7abf4f4a03b7.gif'
+
 
 gif_image = pygame.image.load(gif_path)
 gif_rect = gif_image.get_rect()
