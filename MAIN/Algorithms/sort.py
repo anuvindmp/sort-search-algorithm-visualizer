@@ -156,7 +156,9 @@ def HeapSort(arr):
 #QUICK SORT
 def QuickSort(l, h, arr):
     """Quick sort uses divide and conquer method to solve. It works by comparing an element with other elements and swap with itself
-        if the new element is found to be smaller."""
+        if the new element is found to be smaller.
+        
+        Time complexity is O(n^2) or O(n(log(n)))"""
     if l < h:
         pivot_index = partition(l, h, arr)
         QuickSort(l, pivot_index, arr)
@@ -181,5 +183,42 @@ def partition(l, h, arr):
 
 
 #RADIX SORT(LSD)
-            
-        #HARI DO YOUR THING
+def RadixSort(arr):
+    """Radix sort is a non-comparison based algorithm, it uses stable sorting technique to arrange the numbers
+    By taking each unit digit the sorting is done first. Then 10's digit is taken and sorted and at last the hundreds digit is used to sort
+    
+    Time Complexity is O(d*(n+k))"""
+    # Find the maximum number to know the number of digits
+    max_num = max(arr)
+    
+    # Do counting sort for every digit
+    exp = 1
+    while max_num // exp > 0:
+        counting_sort(arr, exp)
+        exp *= 10
+
+def counting_sort(arr, exp):
+    n = len(arr)
+    output = [0] * n
+    count = [0] * 10
+
+    # Count occurrences of each digit
+    for i in range(n):
+        index = arr[i] // exp
+        count[index % 10] += 1
+
+    # Update count[i] to store the position of the digit in the output array
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+
+    # Build the output array
+    i = n - 1
+    while i >= 0:
+        index = arr[i] // exp
+        output[count[index % 10] - 1] = arr[i]
+        count[index % 10] -= 1
+        i -= 1
+
+    # Copy the output array to the original array
+    for i in range(n):
+        arr[i] = output[i]
