@@ -6,7 +6,7 @@ pygame.init()
 
 # Set up display
 width, height = 1500, 750  # Updated dimensions
-screen = pygame.display.set_mode((width, height))
+screen = pygame.display.set_mode((width, height), pygame.FULLSCREEN)
 pygame.display.set_caption("Animated Text Display")
 
 # Set the background color
@@ -35,12 +35,12 @@ def animated_text_display(word):
         pygame.time.delay(100)  # You can adjust the delay to control the speed
 
 # Set up font for Welcome text
-font_path = "C:\\Users\\Hari\\Documents\\sort-search-algorithm-visualizer\\MAIN\\Assets\\fonts\\static\\RobotoMono-Bold.ttf"
+font_path = "MAIN/Assets/fonts/static/RobotoMono-Bold.ttf"
 font = pygame.font.Font(font_path, 75)  # Adjusted font size
 text_color = (255, 255, 255)  # Set font color to black
 
 # Load the background image
-image_path = "MAIN/Visualization/comascii.jpg"
+image_path = "MAIN/Assets/comascii.jpg"
 background_image = pygame.image.load(image_path)  # Replace with the actual image file path
 background_image = pygame.transform.scale(background_image, (width, height))
 
@@ -55,7 +55,7 @@ word_to_display = "Welcome To Algorithm Visualizer"
 animated_text_display(word_to_display)
 
 # Set up font for message
-message_font_path = "C:\\Users\\Hari\\Documents\\sort-search-algorithm-visualizer\\MAIN\\Assets\\fonts\\static\\RobotoMono-Bold.ttf"
+message_font_path = "MAIN/Assets/fonts/static/RobotoMono-Bold.ttf"
 message_font = pygame.font.Font(message_font_path, 36)
 message_color = (255, 255, 255)
 
@@ -71,15 +71,20 @@ screen.blit(message_surface, message_rect)
 pygame.display.flip()
 
 # Main loop
-waiting_for_click = True
-while waiting_for_click:
+while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            waiting_for_click = False
+            pygame.quit()
+            sys.exit()
+        
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                screen = pygame.display.set_mode((1200,750))
+        
         elif event.type == pygame.MOUSEBUTTONDOWN:
             # Check if the click is on the image
             if pygame.Rect(0, 0, width, height).collidepoint(event.pos):
-                waiting_for_click = False
+                import Menu
 
 # Quit Pygame
 pygame.quit()

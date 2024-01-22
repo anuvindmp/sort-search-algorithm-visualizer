@@ -4,16 +4,16 @@ from sys import exit
 pygame.init()
 
 width, height = 1200, 750
-screen = pygame.display.set_mode((1200,750))
+screen = pygame.display.set_mode((1200,750), pygame.FULLSCREEN)
 pygame.display.set_caption('Menu page')
 
 scrollable_width, scrollable_height = 1600, 1800
 scroll_speed = 30
 scroll_y = 0
 
-font = pygame.font.Font('sort-search-algorithm-visualizer/MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 30)
-font1 = pygame.font.Font('sort-search-algorithm-visualizer/MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 29)
-font3 = pygame.font.Font('sort-search-algorithm-visualizer/MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf', 20)
+font = pygame.font.Font('MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 30)
+font1 = pygame.font.Font('MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 29)
+font3 = pygame.font.Font('MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf', 20)
 
 text = font.render("Welcome to Algorithm Visualizer", True, (109, 165, 192))
 intro = font3.render("This is an interactive app designed to bring algorithms to life through visualization. Whether", True, (109, 165, 192))
@@ -46,7 +46,7 @@ while True:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if button1.collidepoint(event.pos):
-                    print("button clicked")
+                    import BubbleSortV
             if event.button == 4: 
                 if scroll_y < 0:
                     scroll_y += scroll_speed
