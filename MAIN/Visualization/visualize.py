@@ -3,7 +3,7 @@ import sys
 import random
 
 pygame.init()
-screen = pygame.display.set_mode((1200, 750), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((1200, 750))
 pygame.display.set_caption("Bubble Sort Visualization")
 clock = pygame.time.Clock()
 
@@ -50,8 +50,7 @@ while True:
         
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_q:
-                screen = pygame.display.set_mode((1200,750))
-
+                pygame.display.toggle_fullscreen()
     print("TEST")
     draw_array(ARRAY)
     print("TEST1")
