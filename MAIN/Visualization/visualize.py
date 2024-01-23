@@ -35,11 +35,11 @@ def bubble_sort(arr):
 
 
 #draw the array on the screen
-def draw_array(arr, swap_indices=None, color=barColor):
+def draw_array(arr, swapIndexes=None, color=barColor):
     screen.fill(bgColor)
     for i, height in enumerate(arr):
         rect = pygame.Rect(i * BarWidth, 750 - height, BarWidth, height)
-        pygame.draw.rect(screen, color if swap_indices and i in swap_indices else barColor, rect)
+        pygame.draw.rect(screen, color if swapIndexes and i in swapIndexes else barColor, rect)
 
 
 while True:
