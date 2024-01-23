@@ -3,7 +3,7 @@ import sys
 
 pygame.init()
 
-width, height = 1500, 750 
+width, height = 1200, 750 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Algorithm Visualizer")
 
@@ -20,7 +20,7 @@ def animated_text_display(word):
         pygame.time.delay(100) 
 
 font_path = "MAIN/Assets/fonts/static/RobotoMono-Bold.ttf"
-font = pygame.font.Font(font_path, 75) 
+font = pygame.font.Font(font_path, 60) 
 text_color = (255, 255, 255) 
 
 image_path = "MAIN/Assets/comascii.jpg"
