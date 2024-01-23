@@ -10,7 +10,7 @@ clock = pygame.time.Clock()
 # Constants
 ARRAY_SIZE = 50
 BAR_WIDTH = 1200 // ARRAY_SIZE
-ARRAY = [random.randint(70, 750 - 50) for _ in range(ARRAY_SIZE)]
+ARRAY = [random.randint(70, 750 - 50) for i in range(ARRAY_SIZE)]
 
 # Colors
 BACKGROUND_COLOR = (5, 22, 26)

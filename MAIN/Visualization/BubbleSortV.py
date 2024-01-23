@@ -48,7 +48,7 @@ rec41surface = recFont.render(rec41, True, color)
 
 #button to visualize
 button_color1 = (109, 165, 192)
-text = subheadfont.render("Click to see this algo in action!", True, 'black')
+text = subheadfont.render("Click to see this algo in action!", True, color)
 button1 = pygame.Rect(350, 600, 520, 90)
 
 while True:
