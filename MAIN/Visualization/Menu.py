@@ -61,42 +61,55 @@ while True:
         button5 = pygame.Rect(35,510+scroll_y,250,150)
         button6 = pygame.Rect(320,510+scroll_y,250,150)
         button7 = pygame.Rect(610,510+scroll_y,250,150)
+        
         if button1.collidepoint(pygame.mouse.get_pos()):
             button_color1 = (7,46,51)
+            text1 = font.render("BUBBLE SORT", True, 'white')
         else:
             button_color1 = (15,150,156)
+            text1 = font.render("BUBBLE SORT", True, 'black')
         
         if button2.collidepoint(pygame.mouse.get_pos()):
             button_color2 = (7,46,51)
+            text2 = font1.render("INSERTION SORT", True, 'white')
         else:
             button_color2 = (15,150,156)
+            text2 = font1.render("INSERTION SORT", True, 'black')
 
         if button3.collidepoint(pygame.mouse.get_pos()):
             button_color3 = (7,46,51)
+            text3 = font1.render("SELECTION SORT", True, 'white')
         else:
             button_color3 = (15,150,156)
+            text3 = font1.render("SELECTION SORT", True, 'black')
         
         if button4.collidepoint(pygame.mouse.get_pos()):
             button_color4 = (7,46,51)
+            text4 = font.render("HEAP SORT", True, 'white')
         else:
             button_color4 = (15,150,156)
+            text4 = font.render("HEAP SORT", True, 'black')
         
         if button5.collidepoint(pygame.mouse.get_pos()):
             button_color5 = (7,46,51)
+            text5 = font.render("MERGE SORT", True, 'white')
         else:
             button_color5 = (15,150,156)
+            text5 = font.render("MERGE SORT", True, 'black')
         
         if button6.collidepoint(pygame.mouse.get_pos()):
             button_color6 = (7,46,51)
+            text6 = font.render("QUICK SORT", True, 'white')
         else:
             button_color6 = (15,150,156)
+            text6 = font.render("QUICK SORT", True, 'black')
         
         if button7.collidepoint(pygame.mouse.get_pos()):
             button_color7 = (7,46,51)
+            text7 = font.render("RADIX SORT", True, 'white')
         else:
             button_color7 = (15,150,156)
-        
-        
+            text7 = font.render("RADIX SORT", True, 'black')
 
         screen.fill((5,22,26))
         screen.blit(text, (20 ,50 + scroll_y))
