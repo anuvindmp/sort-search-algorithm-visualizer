@@ -11,9 +11,9 @@ scrollable_width, scrollable_height = 1600, 1800
 scroll_speed = 30
 scroll_y = 0
 
-font = pygame.font.Font('sort-search-algorithm-visualizer/MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 30)
-font1 = pygame.font.Font('sort-search-algorithm-visualizer/MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 29)
-font3 = pygame.font.Font('sort-search-algorithm-visualizer/MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf', 20)
+font = pygame.font.Font('MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 30)
+font1 = pygame.font.Font('MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 29)
+font3 = pygame.font.Font('MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf', 20)
 
 text = font.render("Welcome to Algorithm Visualizer", True, (109, 165, 192))
 intro = font3.render("This is an interactive app designed to bring algorithms to life through visualization. Whether", True, (109, 165, 192))

@@ -9,9 +9,9 @@ pygame.display.set_caption("Bubble sort")
 color = (5, 22, 26)
 color1 = (109, 165, 192)
 color2 = (189, 243, 255)
-fontPath1 = 'sort-search-algorithm-visualizer/MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf'
-fontpath2 = 'sort-search-algorithm-visualizer/MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf'
-fontpath3 = 'sort-search-algorithm-visualizer/MAIN/Assets/fonts/Poppins-BoldItalic.ttf'
+fontPath1 = 'MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf'
+fontpath2 = 'MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf'
+fontpath3 = 'MAIN/Assets/fonts/Poppins-BoldItalic.ttf'
 
 # heading
 fontHead = pygame.font.Font(fontPath1, 45)
