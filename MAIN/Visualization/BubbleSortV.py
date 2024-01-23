@@ -9,9 +9,9 @@ pygame.display.set_caption("Bubble sort")
 color = (5, 22, 26)
 color1 = (109, 165, 192)
 color2 = (189, 243, 255)
-fontPath1 = 'MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf'
-fontpath2 = 'MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf'
-fontpath3 = 'MAIN/Assets/fonts/Poppins-BoldItalic.ttf'
+fontPath1 = 'sort-search-algorithm-visualizer/MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf'
+fontpath2 = 'sort-search-algorithm-visualizer/MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf'
+fontpath3 = 'sort-search-algorithm-visualizer/MAIN/Assets/fonts/Poppins-BoldItalic.ttf'
 
 # heading
 fontHead = pygame.font.Font(fontPath1, 45)
@@ -47,7 +47,7 @@ rec4surface = recFont.render(rec4, True, color)
 rec41surface = recFont.render(rec41, True, color)
 
 #button to visualize
-button_color1 = (109, 165, 192)
+button_color1 = (15,150,156)
 text = subheadfont.render("Click to see this algo in action!", True, 'black')
 button1 = pygame.Rect(350, 600, 520, 90)
 
@@ -62,10 +62,12 @@ while True:
                 screen = pygame.display.set_mode((1200,750))
 
         if button1.collidepoint(pygame.mouse.get_pos()):
-            button_color1 = color2
+            button_color1 = (7,46,51)
+            text = subheadfont.render("Click to see this algo in action!", True, 'white')
         else:
-            button_color1 = (109, 165, 192)
-        
+            button_color1 = (15,150,156)
+            text = subheadfont.render("Click to see this algo in action!", True, 'black')
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if button1.collidepoint(event.pos):
