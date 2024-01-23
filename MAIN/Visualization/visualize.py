@@ -8,14 +8,14 @@ pygame.display.set_caption("Bubble Sort Visualization")
 clock = pygame.time.Clock()
 
 # Constants
-ARRAY_SIZE = 50
-BAR_WIDTH = 1200 // ARRAY_SIZE
-ARRAY = [random.randint(70, 750 - 50) for _ in range(ARRAY_SIZE)]
+size = 50
+BarWidth = 1200 // size
+array = [random.randint(70, 750 - 50) for i in range(size)]
 
 # Colors
-BACKGROUND_COLOR = (5, 22, 26)
-BAR_COLOR = (109, 165, 192)
-SWAP_COLOR = (255,255, 255)
+bgColor = (5, 22, 26)
+barColor = (109, 165, 192)
+swapColor = (255,255, 255)
 
 # Bubble Sort algorithm
 def bubble_sort(arr):
@@ -29,17 +29,17 @@ def bubble_sort(arr):
 
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-                draw_array(arr, [j, j+1], SWAP_COLOR)
+                draw_array(arr, [j, j+1], swapColor)
                 pygame.display.flip()
                 pygame.time.wait(50)  
 
 
-# Function to draw the array on the screen
-def draw_array(arr, swap_indices=None, color=BAR_COLOR):
-    screen.fill(BACKGROUND_COLOR)
+#draw the array on the screen
+def draw_array(arr, swapIndexes=None, color=barColor):
+    screen.fill(bgColor)
     for i, height in enumerate(arr):
-        rect = pygame.Rect(i * BAR_WIDTH, 750 - height, BAR_WIDTH, height)
-        pygame.draw.rect(screen, color if swap_indices and i in swap_indices else BAR_COLOR, rect)
+        rect = pygame.Rect(i * BarWidth, 750 - height, BarWidth, height)
+        pygame.draw.rect(screen, color if swapIndexes and i in swapIndexes else barColor, rect)
 
 
 while True:
@@ -52,19 +52,16 @@ while True:
             if event.key == pygame.K_q:
                 pygame.display.toggle_fullscreen()
     print("TEST")
-    draw_array(ARRAY)
+    draw_array(array)
     print("TEST1")
     pygame.display.flip()
     print("TEST2")
-    # Run Bubble Sort algorithm
-    bubble_sort(ARRAY)
+    bubble_sort(array)
     print("TEST3")
-    # Draw the final state
-    draw_array(ARRAY, color=SWAP_COLOR)
+    draw_array(array, color=swapColor)
     print("TEST4")
     pygame.display.flip()
     print("TEST5")
-    # Wait for a key press to exit
     pygame.time.wait(1000)
     print("TEST6")
     pygame.display.update()
