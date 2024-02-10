@@ -50,6 +50,7 @@ button_color1 = (15,150,156)
 text = subheadfont.render("Click to see this algo in action!", True, 'black')
 button1 = pygame.Rect(350, 600, 520, 90)
 
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

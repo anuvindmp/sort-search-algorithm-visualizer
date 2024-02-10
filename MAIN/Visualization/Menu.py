@@ -179,6 +179,3 @@ while True:
         screen.blit(text11, (1000, 855 + scroll_y))
         pygame.display.flip()
         clock.tick(200)
-
-
-
