@@ -17,7 +17,7 @@ def animated_text_display(word):
         y = (height - text_surface.get_height()) // 20   
         screen.blit(text_surface, (x, y))  
         pygame.display.flip()
-        pygame.time.delay(100) 
+        pygame.time.delay(50) 
 
 font_path = "MAIN/Assets/fonts/static/RobotoMono-Bold.ttf"
 font = pygame.font.Font(font_path, 60) 
@@ -60,7 +60,7 @@ while True:
         elif event.type == pygame.MOUSEBUTTONDOWN:
         
             if pygame.Rect(0, 0, width, height).collidepoint(event.pos):
-                import Menu
+                import menu
 
 pygame.quit()
 sys.exit()
