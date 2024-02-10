@@ -71,7 +71,7 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if button1.collidepoint(event.pos):
-                    import visualize
+                    import MAIN.Visualization.Insertion_visualize as Insertion_visualize
 
     screen.fill(color)
     # heading
