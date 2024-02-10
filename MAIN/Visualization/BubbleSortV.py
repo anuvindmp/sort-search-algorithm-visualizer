@@ -1,10 +1,9 @@
 import pygame
+import importlib
 from sys import exit
 
-pygame.init()
-screen = pygame.display.set_mode((1200, 750))
-clock = pygame.time.Clock()
-pygame.display.set_caption("Bubble sort")
+surface = pygame.Surface((1200, 750))
+surface.fill((5, 22, 26))
 color = (5, 22, 26)
 color1 = (109, 165, 192)
 color2 = (189, 243, 255)
@@ -50,49 +49,26 @@ button_color1 = (15,150,156)
 text = subheadfont.render("Click to see this algo in action!", True, 'black')
 button1 = pygame.Rect(350, 600, 520, 90)
 
+surface.fill(color)
+# heading
+surface.blit(heading, (40, 40 ))
+# opening paragraph
+surface.blit(text1surface, (40, 120 ))
+surface.blit(text2surface, (40, 150 ))
+surface.blit(text3surface, (40, 180 ))
+# subheading
+surface.blit(subheadSurface, (40, 240 ))
+# rectangle
+pygame.draw.rect(surface, color2, (40, 300 , 1120, 240))
+# text on rectangle
+surface.blit(rec1surface, (65, 320 ))
+surface.blit(rec2surface, (65, 365 ))
+surface.blit(rec21surface, (65, 395 ))
+surface.blit(rec3surface, (65, 425 ))
+surface.blit(rec4surface, (65, 455 ))
+surface.blit(rec41surface, (65, 485 ))
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
-        
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_q:
-                screen = pygame.display.set_mode((1200,750))
+pygame.draw.rect(surface, button_color1, button1)
+surface.blit(text, (360, 620))
 
-        if button1.collidepoint(pygame.mouse.get_pos()):
-            button_color1 = (7,46,51)
-            text = subheadfont.render("Click to see this algo in action!", True, 'white')
-        else:
-            button_color1 = (15,150,156)
-            text = subheadfont.render("Click to see this algo in action!", True, 'black')
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                if button1.collidepoint(event.pos):
-                    import visualize
-
-    screen.fill(color)
-    # heading
-    screen.blit(heading, (40, 40 ))
-    # opening paragraph
-    screen.blit(text1surface, (40, 120 ))
-    screen.blit(text2surface, (40, 150 ))
-    screen.blit(text3surface, (40, 180 ))
-    # subheading
-    screen.blit(subheadSurface, (40, 240 ))
-    # rectangle
-    pygame.draw.rect(screen, color2, (40, 300 , 1120, 240))
-    # text on rectangle
-    screen.blit(rec1surface, (65, 320 ))
-    screen.blit(rec2surface, (65, 365 ))
-    screen.blit(rec21surface, (65, 395 ))
-    screen.blit(rec3surface, (65, 425 ))
-    screen.blit(rec4surface, (65, 455 ))
-    screen.blit(rec41surface, (65, 485 ))
-
-    pygame.draw.rect(screen, button_color1, button1)
-    screen.blit(text, (360, 620))
-    pygame.display.update()
-    clock.tick(200)
