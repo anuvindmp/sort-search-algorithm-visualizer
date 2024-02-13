@@ -1,13 +1,11 @@
 import pygame
-import importlib
+import subprocess
 from sys import exit
 
 pygame.init()
 width, height = 1200, 750
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Menu page')
-
-
 
 
 ## [ Constants ]
@@ -82,7 +80,6 @@ def main_surface_draw():
 
 
 
-
 ## [ MainLoop ]
 
 clock = pygame.time.Clock()
@@ -101,17 +98,134 @@ while True:
                     states[i] = False
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                if button1.collidepoint(event.pos):
-                    states['bscheck'] = True
-                    import BubbleSortV
-                    screen.blit(BubbleSortV.surface,(0,0))
             if event.button == 4:
                 if scroll_y < 0:
                     scroll_y += scroll_speed
             elif event.button == 5:
                 if scroll_y > -(scrollable_height - height):
                     scroll_y -= scroll_speed
+
+            if event.button == 1:
+                if button1.collidepoint(event.pos):
+                    states['bscheck'] = True
+                    import BubbleSortV
+                    screen.blit(BubbleSortV.surface,(0,0))
+
+            if event.button == 1:
+                if button2.collidepoint(event.pos):
+                    states['ischeck'] = True
+                    import InsertionSort
+                    screen.blit(InsertionSort.surface,(0,0))
+            
+            if event.button == 1:
+                if button3.collidepoint(event.pos):
+                    states['sscheck'] = True
+                    import SelectionSort
+                    screen.blit(SelectionSort.surface,(0,0))
+            
+            if event.button == 1:
+                if button4.collidepoint(event.pos):
+                    states['hscheck'] = True
+                    import HeapSort
+                    screen.blit(HeapSort.surface,(0,0))
+            
+            if event.button == 1:
+                if button5.collidepoint(event.pos):
+                    states['mscheck'] = True
+                    import MergeSort
+                    screen.blit(MergeSort.surface,(0,0))
+            
+            if event.button == 1:
+                if button6.collidepoint(event.pos):
+                    states['qscheck'] = True
+                    import QuickSort
+                    screen.blit(QuickSort.surface,(0,0))
+            
+            if event.button == 1:
+                if button7.collidepoint(event.pos):
+                    states['rscheck'] = True
+                    import RadixSort
+                    screen.blit(RadixSort.surface,(0,0))
+            
+            if event.button == 1:
+                if button8.collidepoint(event.pos):
+                    states['lscheck'] = True
+                    import LinearSearch
+                    screen.blit(LinearSearch.surface,(0,0))
+            
+            if event.button == 1:
+                if button9.collidepoint(event.pos):
+                    states['bincheck'] = True
+                    import BinarySearch
+                    screen.blit(BinarySearch.surface,(0,0))
+            
+            if event.button == 1:
+                if button10.collidepoint(event.pos):
+                    states['bfscheck'] = True
+                    import BFS
+                    screen.blit(BFS.surface,(0,0))
+            
+            if event.button == 1:
+                if button11.collidepoint(event.pos):
+                    states['dfscheck'] = True
+                    import DFS
+                    screen.blit(DFS.surface,(0,0))
+        
+        if states['bscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Bubble_visualize.py"])
+
+        if states['ischeck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Insertion_visualize.py"])
+
+        if states['sscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['hscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['mscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['qscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['rscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['lscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['bincheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['bfscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+        
+        if states['dfscheck'] == True :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+            
 
         button1 = pygame.Rect(35, 310 + scroll_y, 250, 150)
         button2 = pygame.Rect(320, 310 + scroll_y, 250, 150)

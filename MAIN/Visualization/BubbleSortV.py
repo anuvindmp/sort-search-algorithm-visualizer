@@ -1,6 +1,5 @@
 import pygame
-import importlib
-from sys import exit
+
 
 surface = pygame.Surface((1200, 750))
 surface.fill((5, 22, 26))
@@ -46,8 +45,8 @@ rec41surface = recFont.render(rec41, True, color)
 
 #button to visualize
 button_color1 = (15,150,156)
-text = subheadfont.render("Click to see this algo in action!", True, 'black')
-button1 = pygame.Rect(350, 600, 520, 90)
+text = subheadfont.render("Press space to visualize this algo!", True, 'black')
+button1 = pygame.Rect(350, 600, 540, 90)
 
 surface.fill(color)
 # heading
