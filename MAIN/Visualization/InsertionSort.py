@@ -3,9 +3,9 @@ import pygame
 color = (5, 22, 26)
 color1 = (109, 165, 192)
 color2 = (189, 243, 255)
-fontPath1 = 'MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf'
-fontpath2 = 'MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf'
-fontpath3 = 'MAIN/Assets/fonts/Poppins-BoldItalic.ttf'
+fontPath1 = 'Assets/fonts/static/RobotoMono-SemiBold.ttf'
+fontpath2 = 'Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf'
+fontpath3 = 'Assets/fonts/Poppins-BoldItalic.ttf'
 
 # Create a surface to hold all the elements
 surface = pygame.Surface((1200, 750))

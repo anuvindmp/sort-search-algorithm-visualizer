@@ -14,9 +14,9 @@ scrollable_height = 1000
 scroll_speed = 30
 scroll_y = 0
 surface = pygame.Surface((width, scrollable_height))
-font = pygame.font.Font('MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 30)
-font1 = pygame.font.Font('MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf', 29)
-font3 = pygame.font.Font('MAIN/Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf', 20)
+font = pygame.font.Font('Assets/fonts/static/RobotoMono-SemiBold.ttf', 30)
+font1 = pygame.font.Font('Assets/fonts/static/RobotoMono-SemiBold.ttf', 29)
+font3 = pygame.font.Font('Assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf', 20)
 button_color1, button_color2, button_color3 = (15, 150, 156), (15, 150, 156), (15, 150, 156)
 button_color4, button_color5, button_color6, button_color7 = (15, 150, 156), (15, 150, 156), (15, 150, 156), (15, 150, 156)
 button_color8, button_color9, button_color10, button_color11 = (15, 150, 156), (15, 150, 156), (15, 150, 156), (15, 150, 156)
@@ -174,57 +174,57 @@ while True:
         if states['bscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Bubble_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Bubble_visualize.py"])
 
         if states['ischeck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Insertion_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Insertion_visualize.py"])
 
         if states['sscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['hscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['mscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['qscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['rscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['lscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['bincheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['bfscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
         
         if states['dfscheck'] == True :
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    subprocess.Popen(["python", "MAIN/Visualization/Selection_visualize.py"])
+                    subprocess.Popen(["python", "Visualization/Selection_visualize.py"])
             
 
         button1 = pygame.Rect(35, 310 + scroll_y, 250, 150)
