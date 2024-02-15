@@ -9,7 +9,7 @@ class SortingApp:
         self.root = root
         self.root.title("Sorting Visualizer")
 
-        path = "Assets/fonts/static/RobotoMono-SemiBold.ttf"
+        path = "MAIN/Assets/fonts/static/RobotoMono-SemiBold.ttf"
 
         self.heading_label = tk.Label(root, text="Bubble Sort Visualization", font=(path, 20, "bold"))
         self.heading_label.pack()

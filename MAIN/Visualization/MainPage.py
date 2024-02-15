@@ -20,11 +20,11 @@ def animated_text_display(word):
         pygame.display.flip()
         pygame.time.delay(50) 
 
-font_path = "Assets/fonts/static/RobotoMono-Bold.ttf"
+font_path = "MAIN/Assets/fonts/static/RobotoMono-Bold.ttf"
 font = pygame.font.Font(font_path, 60) 
 text_color = (255, 255, 255) 
 
-image_path = "Assets/comascii.jpg"
+image_path = "MAIN/Assets/comascii.jpg"
 background_image = pygame.image.load(image_path) 
 background_image = pygame.transform.scale(background_image, (width, height))
 
@@ -35,7 +35,7 @@ word_to_display = "Welcome To Algorithm Visualizer"
 
 animated_text_display(word_to_display)
 
-message_font_path = "Assets/fonts/static/RobotoMono-Bold.ttf"
+message_font_path = "MAIN/Assets/fonts/static/RobotoMono-Bold.ttf"
 message_font = pygame.font.Font(message_font_path, 36)
 message_color = (255, 255, 255)
 
@@ -56,10 +56,9 @@ while True:
         
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                subprocess.Popen(["python", 'Visualization/signup.py'])
+                subprocess.Popen(["python", 'MAIN/Visualization/signup.py'])
                 pygame.quit()
                 sys.exit()
-                
                 
 
 pygame.quit()

@@ -1,5 +1,15 @@
 import tkinter as tk
 from tkinter import messagebox
+import mysql.connector as con
+import pygame
+
+db=con.connect(host='localhost',user='root',passwd='harish123')
+if db.is_connected():
+    print('connection established')
+mycursor=db.cursor()
+mycursor.execute("USE test")
+mycursor.execute("CREATE DATABASE if not exists password_manager")
+mycursor.execute("CREATE TABLE if not exists info(username VARCHAR(100),password VARCHAR(100))")
 
 class LoginPage:
     def __init__(self, master):
@@ -8,7 +18,7 @@ class LoginPage:
         self.master.geometry("1000x550")
 
         # Create a label with image background
-        self.bg_image = tk.PhotoImage(file="Assets/niceblue.png")
+        self.bg_image = tk.PhotoImage(file="MAIN/Assets/niceblue.png")
         self.background_label = tk.Label(master, image=self.bg_image)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
@@ -41,15 +51,25 @@ class LoginPage:
     def login(self):
         username = self.entry_username.get()
         password = self.entry_password.get()
-
+        
+        
+        #fetching username and pass from db
+        mycursor.execute(f"select username from info where username='{username}'")
+        usern = mycursor.fetchone()
+        mycursor.execute(f"select password from info where password='{password}'")
+        passw = mycursor.fetchone()
         # You can add your authentication logic here
-        if username == "admin" and password == "admin":
+        if not (username and password):
+            messagebox.showerror("Login Failed", "Enter username and password")
+        elif not usern:
+            messagebox.showerror("Login Failed", "Invalid username")
+        elif not passw:
+            messagebox.showerror("Login Failed", "Invalid password")
+        else:
             messagebox.showinfo("Login Successful", "Welcome, {}".format(username))
             self.master.destroy()  # Close the login window
             import menu
-        else:
-            messagebox.showerror("Login Failed", "Invalid username or password")
-
+           
     def open_signup_page(self):
         self.master.destroy()  # Close the login window
         signup_window = tk.Tk()
@@ -63,7 +83,7 @@ class SignUpPage:
         self.master.geometry("1000x550")
 
         # Create a label with image background
-        self.bg_image = tk.PhotoImage(file="Assets/niceblue.png")
+        self.bg_image = tk.PhotoImage(file="MAIN/Assets/niceblue.png")
         self.background_label = tk.Label(master, image=self.bg_image)
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
@@ -96,12 +116,14 @@ class SignUpPage:
         self.button_signup.place(relx=0.5, rely=0.68, anchor="center")
 
     def signup(self):
-        username = self.entry_username.get()
-        password = self.entry_password.get()
+        user = self.entry_username.get()
+        passwo = self.entry_password.get()
         email = self.entry_email.get()
 
         # You can add your signup logic here
-        messagebox.showinfo("Sign Up Successful", "You have successfully signed up, {}".format(username))
+        mycursor.execute(f'insert into info(username,password) values("{user}","{passwo}")')
+        db.commit()
+        messagebox.showinfo("Sign Up Successful", "You have successfully signed up, {}".format(user))
         self.master.destroy()  # Close the signup window
         import menu
 
